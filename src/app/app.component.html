@@ -1,0 +1,17 @@
+<div>
+  <input type="text" #data name="data" /> &nbsp;<span
+    ><button (click)="addToList(data)">Add</button>
+  </span>
+  <br />
+  <ul>
+    <li *ngFor="let item of list; index as i">
+      {{ item.name }} &nbsp;<span>
+        <button (click)="moveUp(i - 1, i)">Up</button> </span
+      >&nbsp;
+      <span> <button (click)="moveDown(i, i + 1)">Down</button> </span> &nbsp;
+      <span>
+        <input type="checkbox" (click)="onCheck()" [checked]="item.status"/>
+      </span>
+    </li>
+  </ul>
+</div>
